@@ -3,7 +3,7 @@
 ## How to run on local machine
 <ul>
 <li>Clone this repository</li>
-<li>Install ![dotnet 5](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install) on your local machine</li>
+<li>Install ![dotnet 5](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/install installation guide) on your local machine</li>
 </ul>
 
 ### Using Visual Studio
