@@ -14,5 +14,5 @@
 ### Using Visual Studio Code
 <ul>
 <li>Open location where .csproj file lives in terminal</li>
-<li>typee ``dotnet run`` and hit enter to exexute the program.</li>
+<li>typee <code>dotnet run</code> and hit enter to exexute the program.</li>
 </ul>
