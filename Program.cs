@@ -29,5 +29,41 @@ namespace problemSolving
             }
             return counts.ToArray();
         }
+
+
+
+
+
+
+        class SinglyLinkedListNode
+        {
+            public int data;
+            public SinglyLinkedListNode next;
+        }
+
+
+        /// <summary>
+        ///     This methods checks whether there is a cycle in a linkedlist
+        /// </summary>
+        /// <param name="head">contains starting point of linkedlist</param>
+        /// <returns>bool on basis of if cycle exists or not</returns>
+        static bool HasCycle(SinglyLinkedListNode head)
+        {
+            SinglyLinkedListNode temp = new SinglyLinkedListNode();
+            List<SinglyLinkedListNode> pointedLocations = new List<SinglyLinkedListNode>();
+            temp = head;
+            while (temp.next != null)
+            {
+                var isVisited = pointedLocations.Any(p => p == temp);
+                if(isVisited)
+                    return isVisited;
+                pointedLocations.Add(temp);
+                if(temp.next == null)
+                    return false;
+                temp = temp.next;
+            }
+            return false;
+
+        }
     }
 }
