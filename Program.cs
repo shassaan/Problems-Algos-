@@ -31,8 +31,15 @@ namespace problemSolving
         }
 
 
+        class node
+        {
 
+            public int freq;
+            public char data;
+            public node left;
+            public node right;
 
+        }
 
 
         class SinglyLinkedListNode
@@ -55,10 +62,10 @@ namespace problemSolving
             while (temp.next != null)
             {
                 var isVisited = pointedLocations.Any(p => p == temp);
-                if(isVisited)
+                if (isVisited)
                     return isVisited;
                 pointedLocations.Add(temp);
-                if(temp.next == null)
+                if (temp.next == null)
                     return false;
                 temp = temp.next;
             }
