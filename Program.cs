@@ -49,6 +49,60 @@ namespace problemSolving
         }
 
 
+
+#region  zameen test
+
+
+
+
+
+#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         /// <summary>
         ///     This methods checks whether there is a cycle in a linkedlist
         /// </summary>
