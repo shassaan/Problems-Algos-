@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace problemSolving
 {
@@ -8,6 +9,12 @@ namespace problemSolving
     {
         static void Main(string[] args)
         {
+            var s = typeof(SinglyLinkedListNode).GetProperties();
+            Console.WriteLine();
+            foreach (var item in s)
+            {
+                Console.WriteLine($"{item.PropertyType.IsPrimitive},{item.Name}");
+            }
             matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
             Console.WriteLine("Hello World!");
         }
@@ -34,18 +41,18 @@ namespace problemSolving
         class node
         {
 
-            public int freq;
-            public char data;
-            public node left;
-            public node right;
+            public int freq {get;set;}
+            public char data{get;set;}
+            public node left{get;set;}
+            public node right{get;set;}
 
         }
 
 
         class SinglyLinkedListNode
         {
-            public int data;
-            public SinglyLinkedListNode next;
+            public int data{get;set;}
+            public SinglyLinkedListNode next{get;set;}
         }
 
 
