@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Problems_Algos_.Models;
 
 namespace problemSolving
 {
@@ -9,14 +10,7 @@ namespace problemSolving
     {
         static void Main(string[] args)
         {
-            var s = typeof(SinglyLinkedListNode).GetProperties();
-            Console.WriteLine();
-            foreach (var item in s)
-            {
-                Console.WriteLine($"{item.PropertyType.IsPrimitive},{item.Name}");
-            }
             matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
-            Console.WriteLine("Hello World!");
         }
 
 
@@ -37,78 +31,7 @@ namespace problemSolving
             return counts.ToArray();
         }
 
-
-        class node
-        {
-
-            public int freq {get;set;}
-            public char data{get;set;}
-            public node left{get;set;}
-            public node right{get;set;}
-
-        }
-
-
-        class SinglyLinkedListNode
-        {
-            public int data{get;set;}
-            public SinglyLinkedListNode next{get;set;}
-        }
-
-
-
-#region  zameen test
-
-
-
-
-
-#endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
         /// <summary>
         ///     This methods checks whether there is a cycle in a linkedlist
@@ -120,18 +43,17 @@ namespace problemSolving
             SinglyLinkedListNode temp = new SinglyLinkedListNode();
             List<SinglyLinkedListNode> pointedLocations = new List<SinglyLinkedListNode>();
             temp = head;
-            while (temp.next != null)
+            while (temp.Next != null)
             {
                 var isVisited = pointedLocations.Any(p => p == temp);
                 if (isVisited)
                     return isVisited;
                 pointedLocations.Add(temp);
-                if (temp.next == null)
+                if (temp.Next == null)
                     return false;
-                temp = temp.next;
+                temp = temp.Next;
             }
             return false;
-
         }
     }
 }
