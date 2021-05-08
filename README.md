@@ -1,4 +1,4 @@
-# This Repository contains implementation of diffenrent algorithms
+# This Repository contains implementation of different algorithms
 
 ## How to run on local machine
 <ul>
@@ -14,5 +14,7 @@
 ### Using Visual Studio Code
 <ul>
 <li>Open location where .csproj file lives in terminal</li>
-<li>typee <code>dotnet run</code> and hit enter to exexute the program.</li>
+<li>type <code>dotnet run</code> and hit enter to execute the program.</li>
 </ul>
+
+#### Note : You need to call function in Main function to see execution of specific problem 
