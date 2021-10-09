@@ -8,24 +8,26 @@
     "net5.0": []
   },
   "packageFolders": {
-    "/home/hassaan/.nuget/packages/": {}
+    "C:\\Users\\hassaan\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/hassaan/syed/work/mywork/learning/problemSolving/problemSolving/problemSolving.csproj",
+      "projectUniqueName": "C:\\syed\\work\\mywork\\probemSolving\\Problems-Algos-\\problemSolving.csproj",
       "projectName": "problemSolving",
-      "projectPath": "/home/hassaan/syed/work/mywork/learning/problemSolving/problemSolving/problemSolving.csproj",
-      "packagesPath": "/home/hassaan/.nuget/packages/",
-      "outputPath": "/home/hassaan/syed/work/mywork/learning/problemSolving/problemSolving/obj/",
+      "projectPath": "C:\\syed\\work\\mywork\\probemSolving\\Problems-Algos-\\problemSolving.csproj",
+      "packagesPath": "C:\\Users\\hassaan\\.nuget\\packages\\",
+      "outputPath": "C:\\syed\\work\\mywork\\probemSolving\\Problems-Algos-\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/hassaan/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\hassaan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -58,7 +60,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

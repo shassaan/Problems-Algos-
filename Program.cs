@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json;
 using Problems_Algos_.Models;
 
 namespace problemSolving
@@ -10,7 +11,8 @@ namespace problemSolving
     {
         static void Main(string[] args)
         {
-            matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
+            //matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
+           Console.WriteLine(JsonSerializer.Serialize( reverseArray(new List<int>{1,2,3})));
         }
 
 
@@ -31,7 +33,17 @@ namespace problemSolving
             return counts.ToArray();
         }
 
-        
+        public static List<int> reverseArray(List<int> a)
+        {
+            var reversedList = new List<int>();
+            for (int i = a.Count-1; i >= 0; i--)
+            {
+                reversedList.Add(a[i]);
+            }
+            return reversedList;
+        }
+
+
 
         /// <summary>
         ///     This methods checks whether there is a cycle in a linkedlist
