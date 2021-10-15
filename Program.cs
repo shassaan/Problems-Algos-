@@ -12,7 +12,7 @@ namespace problemSolving
         static void Main(string[] args)
         {
             //matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
-           Console.WriteLine(JsonSerializer.Serialize( reverseArray(new List<int>{1,2,3})));
+           Console.WriteLine(JsonSerializer.Serialize(GetPairWhichSumsTo(9,new List<int>{2,4,6,3,1})));
         }
 
 
@@ -66,6 +66,26 @@ namespace problemSolving
                 temp = temp.Next;
             }
             return false;
+        }
+
+
+        static List<int> GetPairWhichSumsTo(int x,List<int> integers)
+        {
+            var dictionary = new Dictionary<int,int>();
+            foreach (var integer in integers)
+            {
+                dictionary.Add(integer,integers.IndexOf(integer));
+            }
+
+            foreach (var integer in integers)
+            {
+                int firstNumber = x-integer;
+                if(dictionary.ContainsKey(firstNumber) && integers.IndexOf(firstNumber) != integers.IndexOf(integer))
+                {
+                    return new List<int>{integer,firstNumber};
+                }
+            }
+            return null;
         }
     }
 }
