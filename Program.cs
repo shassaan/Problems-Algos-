@@ -12,20 +12,44 @@ namespace problemSolving
         static void Main(string[] args)
         {
             //matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
-           Console.WriteLine(JsonSerializer.Serialize( rotLeft(new List<int>{1,2,3,4,5},4)));
+            Console.WriteLine(JsonSerializer.Serialize(rotLeft(new List<int> { 1, 2, 3, 4, 5 }, 4)));
         }
 
 
         public static List<int> rotLeft(List<int> a, int d)
         {
             //1,2,3,4,5
-            for(int i = 0;i < d;i++)
+            for (int i = 0; i < d; i++)
             {
                 var elementToShift = a[0];
                 a.Remove(a[0]);
                 a.Add(elementToShift);
             }
             return a;
+        }
+
+        public static void minimumBribes(List<int> q)
+        {
+            var bribes = 0;
+            for (int j = 0; j <= q.Count - 2; j++)
+            {
+                for (int i = 0; i <= q.Count - 2; i++)
+                {
+                    if (q[i] > q[i + 1])
+                    {
+                        var temp = q[i + 1];
+                        q[i + 1] = q[i];
+                        q[i] = temp;
+                        bribes ++;
+                    }
+                }
+            }
+
+               Console.WriteLine(bribes);
+               if(bribes > 2)
+               {
+                   Console.WriteLine("Too chaotic");
+               }
         }
 
 
@@ -46,14 +70,14 @@ namespace problemSolving
             return counts.ToArray();
         }
 
-        
 
-        
+
+
 
         public static List<int> reverseArray(List<int> a)
         {
             var reversedList = new List<int>();
-            for (int i = a.Count-1; i >= 0; i--)
+            for (int i = a.Count - 1; i >= 0; i--)
             {
                 reversedList.Add(a[i]);
             }
@@ -86,20 +110,20 @@ namespace problemSolving
         }
 
 
-        static List<int> GetPairWhichSumsTo(int x,List<int> integers)
+        static List<int> GetPairWhichSumsTo(int x, List<int> integers)
         {
-            var dictionary = new Dictionary<int,int>();
+            var dictionary = new Dictionary<int, int>();
             foreach (var integer in integers)
             {
-                dictionary.Add(integer,integers.IndexOf(integer));
+                dictionary.Add(integer, integers.IndexOf(integer));
             }
 
             foreach (var integer in integers)
             {
-                int firstNumber = x-integer;
-                if(dictionary.ContainsKey(firstNumber) && integers.IndexOf(firstNumber) != integers.IndexOf(integer))
+                int firstNumber = x - integer;
+                if (dictionary.ContainsKey(firstNumber) && integers.IndexOf(firstNumber) != integers.IndexOf(integer))
                 {
-                    return new List<int>{integer,firstNumber};
+                    return new List<int> { integer, firstNumber };
                 }
             }
             return null;
