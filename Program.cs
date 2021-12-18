@@ -12,7 +12,20 @@ namespace problemSolving
         static void Main(string[] args)
         {
             //matchingStrings(new string[] { "" }, new string[] { "1", "2", "3" });
-           Console.WriteLine(JsonSerializer.Serialize( reverseArray(new List<int>{1,2,3})));
+           Console.WriteLine(JsonSerializer.Serialize( rotLeft(new List<int>{1,2,3,4,5},4)));
+        }
+
+
+        public static List<int> rotLeft(List<int> a, int d)
+        {
+            //1,2,3,4,5
+            for(int i = 0;i < d;i++)
+            {
+                var elementToShift = a[0];
+                a.Remove(a[0]);
+                a.Add(elementToShift);
+            }
+            return a;
         }
 
 
@@ -32,6 +45,10 @@ namespace problemSolving
             }
             return counts.ToArray();
         }
+
+        
+
+        
 
         public static List<int> reverseArray(List<int> a)
         {
