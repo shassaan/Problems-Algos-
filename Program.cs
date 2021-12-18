@@ -84,5 +84,25 @@ namespace problemSolving
             }
             return false;
         }
+
+
+        static List<int> GetPairWhichSumsTo(int x,List<int> integers)
+        {
+            var dictionary = new Dictionary<int,int>();
+            foreach (var integer in integers)
+            {
+                dictionary.Add(integer,integers.IndexOf(integer));
+            }
+
+            foreach (var integer in integers)
+            {
+                int firstNumber = x-integer;
+                if(dictionary.ContainsKey(firstNumber) && integers.IndexOf(firstNumber) != integers.IndexOf(integer))
+                {
+                    return new List<int>{integer,firstNumber};
+                }
+            }
+            return null;
+        }
     }
 }
