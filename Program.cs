@@ -40,16 +40,16 @@ namespace problemSolving
                         var temp = q[i + 1];
                         q[i + 1] = q[i];
                         q[i] = temp;
-                        bribes ++;
+                        bribes++;
                     }
                 }
             }
 
-               Console.WriteLine(bribes);
-               if(bribes > 2)
-               {
-                   Console.WriteLine("Too chaotic");
-               }
+            Console.WriteLine(bribes);
+            if (bribes > 2)
+            {
+                Console.WriteLine("Too chaotic");
+            }
         }
 
 
@@ -110,23 +110,43 @@ namespace problemSolving
         }
 
 
-        static List<int> GetPairWhichSumsTo(int x, List<int> integers)
+        public int[] TwoSumBruteForce(int[] nums, int target)
         {
-            var dictionary = new Dictionary<int, int>();
-            foreach (var integer in integers)
+            int[] arr = new int[2];
+            for(int i = 0;i<nums.Length;i++)
             {
-                dictionary.Add(integer, integers.IndexOf(integer));
-            }
-
-            foreach (var integer in integers)
-            {
-                int firstNumber = x - integer;
-                if (dictionary.ContainsKey(firstNumber) && integers.IndexOf(firstNumber) != integers.IndexOf(integer))
+                for (int j = 1;j<nums.Length;j++)
                 {
-                    return new List<int> { integer, firstNumber };
+                    if(nums[i] + nums [j] == target && i != j)
+                    {
+                        arr[0] = i;
+                        arr[1] = j;
+                        return arr;
+                    }
                 }
             }
-            return null;
+            return arr;
+        }
+
+        public int[] TwoSumDictionary(int[] nums, int target)
+        {
+            int[] arr = new int[2];
+            var dictionary = new Dictionary<int,int>();
+            for(int i = 0;i<nums.Length;i++)
+            {
+                var difference = target - nums[i];
+                if(dictionary.ContainsKey(difference))
+                {
+                    arr[0] = i;
+                    arr[1] = dictionary[difference];
+                    return arr;
+                }
+                else if(!dictionary.ContainsKey(nums[i]))
+                {
+                    dictionary.Add(nums[i],i);
+                }
+            }
+            return arr;
         }
     }
 }
