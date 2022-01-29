@@ -1,12 +1,15 @@
 {
   "version": 2,
-<<<<<<< HEAD
-  "dgSpecHash": "xxCushjtNtnUPPpEoPxnqSdYPsmUra3G5gGGP+pWZ/BXRtHf1pnxCmwM2zo0XmMyIwt2kStKKn54nlOvBR10sg==",
-=======
-  "dgSpecHash": "IQNcl8DBj6JlJM/36acmqaEQIEVIhphfjtE9i7Gek1BDNxofU5Eq63179j7sLEgPNWrkwzwx37Rc81eTDOjYpQ==",
->>>>>>> b0134355f26346027e0d8472097b22fac554487c
+  "dgSpecHash": "QIy3VDaGp6AcM+ViIhRysuS7YbGvYFantuUCkaVOu8vSV9UmumDHTyCLeLzVNcFcPq2QFKLkx8kUCy2dHykNMw==",
   "success": true,
   "projectFilePath": "/home/syed/mywork/Problems-Algos-/problemSolving.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /home/syed/mywork/Problems-Algos-/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

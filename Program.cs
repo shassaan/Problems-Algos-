@@ -216,5 +216,42 @@ namespace problemSolving
             }
             return arr;
         }
-    }
+
+
+        public bool IsPossible(int[] piles,int k,int h)
+        {
+            int hours = 0;
+            foreach(int pile in piles)
+            {
+                int div = pile/k;
+                hours += div;
+                if(pile%k != 0)
+                {
+                    hours++;
+                }
+            }
+            return hours<= h;
+        }
+        
+        public int MinEatingSpeed(int[] piles, int h) 
+        {
+            int max = piles.Max();
+            int min = piles.Min();
+            int low = 1;
+            int high = max;
+            while(low < high)
+            {
+                int mid = low + (high - low) / 2;
+                if(IsPossible(piles,mid,h))
+                {
+                    high = mid;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
+            }
+            return low;
+        }
+}
 }
